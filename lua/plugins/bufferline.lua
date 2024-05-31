@@ -1,16 +1,17 @@
 return {
-  'akinsho/bufferline.nvim',
+  'akinsho/bufferline.nvim', -- https://github.com/akinsho/bufferline.nvim
   version = '*',
   dependencies = 'nvim-tree/nvim-web-devicons',
   event = 'VeryLazy',
-  opts = {
+  opts = { -- :h bufferline-configuration
     options = {
       -- stylua: ignore
       close_command = function(n) require('util.ui').bufremove(n) end,
       -- stylua: ignore
       right_mouse_command = function(n) require('util.ui').bufremove(n) end,
-      -- diagnostics = 'nvim_lsp',
-      -- always_show_bufferline = false,
+      diagnostics = 'nvim_lsp',
+      always_show_bufferline = false,
+      show_close_icon = false,
       offsets = {
         {
           filetype = 'neo-tree',
