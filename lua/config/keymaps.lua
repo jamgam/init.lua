@@ -1,5 +1,8 @@
 local set = vim.keymap.set
 
+set('n', '<leader>l', ':Lazy<cr>', { desc = 'Lazy' })
+set('n', '<leader>qq', ':qa<cr>', { desc = 'Quit' })
+
 set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- save file
@@ -28,23 +31,13 @@ set('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move Up' })
 set('n', '*', '*N', { desc = 'Search word under cursor staying on word', remap = true })
 
 -- buffers
--- set('n', '<A-w>', LazyVim.ui.bufremove, { noremap = true, silent = true })
 set('n', '<S-Tab>', ':bprev<CR>', { noremap = true, silent = true })
 set('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
-set('n', '<A-1>', ':BufferLineGoToBuffer 1<CR>', { noremap = true, silent = true })
-set('n', '<A-2>', ':BufferLineGoToBuffer 2<CR>', { noremap = true, silent = true })
-set('n', '<A-3>', ':BufferLineGoToBuffer 3<CR>', { noremap = true, silent = true })
-set('n', '<A-4>', ':BufferLineGoToBuffer 4<CR>', { noremap = true, silent = true })
-set('n', '<A-5>', ':BufferLineGoToBuffer 5<CR>', { noremap = true, silent = true })
-set('n', '<A-6>', ':BufferLineGoToBuffer 6<CR>', { noremap = true, silent = true })
-set('n', '<A-7>', ':BufferLineGoToBuffer 7<CR>', { noremap = true, silent = true })
-set('n', '<A-8>', ':BufferLineGoToBuffer 8<CR>', { noremap = true, silent = true })
-set('n', '<A-9>', ':BufferLineGoToBuffer 9<CR>', { noremap = true, silent = true })
 
 -- easy commenting
 set('n', '<A-/>', 'gcc', { remap = true })
 set('v', '<A-/>', 'gc', { remap = true })
-set('i', '<A-/>', ':normal gci', { remap = true })
+set('i', '<A-/>', '<cmd>normal gc<CR>i', { remap = true })
 
 -- fix weird behavior with shift + arrow keys
 set('', '<S-Down>', '<Down>')
